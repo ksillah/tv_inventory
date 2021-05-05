@@ -30,3 +30,62 @@ ul#horizontal-list a:nth-last-child(1){
     margin-right: 0.2vw;
 }
 /* End of Nav Styles */
+
+/*start of header section*/.
+#header-text{
+    padding: 2vw;
+}
+
+.header-image{
+    width: 52%;
+    max-width: 100%;
+}
+
+/*start of middle sction*/
+#middle-text{
+    text-align: center;
+    padding: 13vh;
+}
+#middle-text h2{
+    padding: 1.5 vw;
+}
+/* End of Middle Section*/
+
+/*Start of features section*/
+#api-image,#graphql-image,#database-image{
+    margin-bottom: 10vh;
+}
+
+#features-section{
+    margin: 8vw;
+}
+
+/*End of Features Section*/
+/* Start community section*/
+
+#Drone-Image{
+    width: 10%;
+    max-width: 5%;
+    margin-left: 3vh;
+}
+/*End of community
+
+Start of footer section styles*/
+
+.footer-text-flex{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3vw;
+}
+
+#footer-logo{
+    width: 100%;
+    max-width: 100%;
+}
+
+#footer{
+    border-top: 3px solid black;
+    margin-top: 20vh;
+}
+
+
