@@ -48,7 +48,7 @@ class Review(db.Model):
     id = db.Column(db.String, primary_key = True)
     show = db.Column(db.String(200), nullable = True)
     season = db.Column(db.Integer(), nullable = False)
-    episode = db.Column(db.Integer(), nullable = False)
+    episode = db.Column(db.String(), nullable = False)
     rating = db.Column(db.Integer(), nullable = False)
     user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable = False)
 
@@ -60,12 +60,12 @@ class Review(db.Model):
         self.rating= rating
         self.user_token = user_token
 
-    
-    def set_id(self):
-        return str(uuid.uuid4())
 
     def __repr__(self):
         return f'The following show been rated: {self.show}'
+
+    def set_id(self):
+        return str(uuid.uuid4())
     
 #api schema via marshmallow
 class TvSchema(ma.Schema):

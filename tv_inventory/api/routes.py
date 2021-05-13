@@ -42,7 +42,7 @@ def get_review(current_user_token, id):
     return jsonify(response)
 
 #update review by id
-@api.route('/reviewss/<id>', methods = ['POST', 'PUT'])
+@api.route('/reviews/<id>', methods = ['POST', 'PUT'])
 @token_required
 def update_review(current_user_token, id):
     review = Review.query.get(id)
