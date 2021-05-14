@@ -27,6 +27,6 @@ login_manager.login_view = 'auth.signin' #specifying a route for non authorized 
 ma.init_app(app)
 CORS(app)
 
-app.json_encoder=JSONEncoder
+app.json_encoder = JSONEncoder
 
 from tv_inventory import models

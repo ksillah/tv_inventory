@@ -1,12 +1,8 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, json
 from tv_inventory.helpers import token_required
 from tv_inventory.models import User, Review, tv_schema, tv_schemas, db
 
 api = Blueprint('api', __name__, url_prefix='/api')
-
-@api.route('/getdata')
-def getdata():
-    return {'some_value': 52, 'another_value': 73}
 
 #create review endpoint
 @api.route('/reviews', methods = ['POST'])
@@ -46,13 +42,16 @@ def get_review(current_user_token, id):
 @token_required
 def update_review(current_user_token, id):
     review = Review.query.get(id)
+    print(request.json)
     #different notation from instantiation
     review.show = request.json['show']
     review.season = request.json['season']
     review.episode = request.json['episode']
     review.rating = request.json['rating']
-    review.user_token = current_user_token.token
+    review.user_token = current_user_token.token 
+    print("rating", review.rating)
 
+    # # #different notation from instantiation
     db.session.commit()
     response = tv_schema.dump(review)
     return jsonify(response)
