@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify, jsoncd
+from flask import Blueprint, request, jsonify, json
 from tv_inventory.helpers import token_required
 from tv_inventory.models import User, Review, tv_schema, tv_schemas, db
 
