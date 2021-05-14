@@ -1,0 +1,1 @@
+web: gunicorn tv_inventory:app --preload --timeout 60
